@@ -2,7 +2,7 @@ CREATE DATABASE hoangha
 USE hoangha
 GO
 --Bang Menu
-CREATE TABLE menu(
+CREATE TABLE Menu(
 	meni_id int primary key identity(1,1),
 	name nvarchar(50) unique not null,
 	url ntext null,
@@ -413,3 +413,14 @@ CREATE TABLE Vitri(
 	[dateAdd] datetime,
 	dateUpdate datetime
 )
+--Bang Product_Group_tinhnang
+CREATE TABLE Product_Group_Tinhnang(
+	product_group_tinhnang_id int primary key identity(1,1),
+	product_id int not null,
+	group_tinhnang_id int not null
+)
+ALTER TABLE Product_Group_Tinhnang ADD CONSTRAINT fk_product_group_tinhnang foreign key (product_id) references Product(product_id)
+ALTER TABLE Product_Group_Tinhnang ADD CONSTRAINT fk_product_group_tinhnang_grouptinhnang foreign key (group_tinhnang_id) references Group_Tinhnang(group_tinhnang_id)
+
+ALTER TABLE Product ADD CONSTRAINT fk_address_baohanh_product foreign key (address_baohanh_id) references Address_Baohanh(address_baohanh_id)
+
