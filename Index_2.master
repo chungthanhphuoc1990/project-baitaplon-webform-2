@@ -1,0 +1,63 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Index_2.master.cs" Inherits="Index_2" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title><asp:ContentPlaceHolder runat="server" ID="title"></asp:ContentPlaceHolder></title>
+    <asp:ContentPlaceHolder runat="server" ID="meta"></asp:ContentPlaceHolder>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="wrapper">
+            <div id="header">
+                <div id="head">
+                  <div id="logo"> <a href="/"><img src="images/logo.gif" alt="Hoàng Hà Mobile" /></a> </div>
+                  <div id="top-search"> <span class="input">
+                    <input type="text" name="top-keyword" id="top-keyword" value="Từ khóa tìm kiếm" onfocus="if(this.value=='Từ khóa tìm kiếm') this.value='';" onblur="if(this.value=='') this.value='Từ khóa tìm kiếm'" />
+                    </span> <span class="submit"> <a href="javascript:quickSearch();">Tìm kiếm</a> </span> </div>
+                </div>
+              </div>
+              <div id="top-menu-c">
+                <div id="top-menu">
+                  <ul>
+                    <li class="first"> <a href="/"><span>Trang chủ</span></a></li>
+                    <li> <a href="/dien-thoai"><span>Điện thoại</span></a></li>
+                    <li> <a href="/phu-kien"><span>Phụ kiện</span></a></li>
+                    <li> <a href="/bao-gia"><span>B&#225;o gi&#225;</span></a></li>
+                    <li> <a href="/tin-tuc"><span>Tin tức</span></a></li>
+                    <li> <a href="/hoi-dap"><span>Hỏi đ&#225;p</span></a></li>
+                    <li> <a href="/huong-dan"><span>Hướng dẫn sử dụng</span></a></li>
+                    <li> <a href="/gioi-thieu"><span>Giới thiệu</span></a></li>
+                    <li> <a href="/lien-he"><span>Li&#234;n hệ</span></a></li>
+                    <li> <a href="http://hoanghamobile.com"target=&quot;_blank&quot;><span>Diễn đ&#224;n</span></a></li>
+                    <li> <a href="/Member.aspx"><span>Th&#224;nh vi&#234;n</span></a></li>
+                  </ul>
+                </div>
+              </div>
+             <div id="body">
+                 <!-- box content -->
+    
+                <div id="content">
+                    <asp:ContentPlaceHolder runat="server" ID="menu">
+                     
+                    </asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="maincontent" runat="server">
+        
+                    </asp:ContentPlaceHolder>
+                </div>
+                <div id="footer">
+                    <div class="footer-c">
+                    <p class="footer-l"> <span><strong>Trụ sở chính:</strong> Siêu thị 194 Lê Duẩn - Hà Nội. <strong>Điện thoại:</strong> 043.5186033</span> <span><strong>Chi nhánh:</strong> Siêu thị 122 Thái Hà - Hà Nội. <strong>Điện thoại:</strong> 097.379.0122</span> <span><strong>Chi nhánh:</strong> Siêu thị 382 Nguyễn Văn Cừ - Hà Nội. <strong>Điện thoại:</strong> 0125.363.2222</span> <span><strong>Chi nhánh:</strong> Siêu thị 392 cầu giấy - Hà Nội. <strong>Điện thoại:</strong> 0968.32.33.99</span> <span><strong>Website:</strong> <a href="http://www.hoanghamobile.com">http://www.hoanghamobile.com</a> | <a href="http://hoanghamobile.com">http://hoanghamobile.com</a></span> <span><strong>Email:</strong> <a href="mailto:contact@hoanghamobile.com">contact@hoanghamobile.com</a></span> </p>
+                    <p class="footer-r"> <a href="mailto:webmaster@dangquang.com.vn">© 2011 QuangGame</a> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+
