@@ -210,13 +210,16 @@ VALUES(1,N'Tinh nang noi bat',1,1)
 --Bang Product_tinhnang
 CREATE TABLE Product_Tinhnang(
 	product_tinhnang_id int primary key identity(1,1),
+	product_id int not null,
 	tinhnang_id int not null,
 	setting_id int not null,
 )
 ALTER TABLE Product_Tinhnang ADD CONSTRAINT fk_product_tinhnang_tinhnang foreign key (tinhnang_id) references Tinhnang(tinhnang_id)
 ALTER TABLE Product_Tinhnang ADD CONSTRAINT fk_product_tinhnang_setting foreign key (setting_id) references Setting(setting_id)
+ALTER TABLE Product_Tinhnang ADD CONSTRAINT fk_product_tinhnang_product foreign key (product_id) references Product(product_id)
 
-
+INSERT INTO Product_Tinhnang(product_id,tinhnang_id,setting_id)
+VALUES(1,1,1)
 --Bang Setting
 CREATE TABLE Setting(
 	setting_id int primary key identity(1,1),
@@ -391,7 +394,7 @@ CREATE TABLE Contact(
 INSERT INTO Contact(name,email,phone,title,content,dateStart)
 VALUES(N'Ten ',N'email','0896868632',N'Tieu de',N'Noi dung','2012-10-12')
 --Bang User
-CREATE TABLE [User](
+CREATE DROP TABLE [User](
 	[user_id] int primary key identity(1,1),
 	permission_id int not null,
 	username varchar(50) not null,
@@ -402,13 +405,16 @@ CREATE TABLE [User](
 	birthday datetime not null,
 	province ntext not null,
 	district ntext not null,
-	[status] bit default 0
+	[status] bit default 0,
+	dateStart datetime,
+	dateUpdate datetime
 )
 ALTER TABLE [User] ADD CONSTRAINT fk_user_permission foreign key (permission_id) references Permission(permission_id)
+
 INSERT INTO [User](permission_id,username,[password],[address],email,phone,birthday,province,district,[status])
 VALUES(1,'thangepc','1234',N'Ha Noi','email','099878968','1987-08-30',N'Ha Noi city',N'Ung hoa',1)
 --Bang Permission
-CREATE TABLE Permission(
+CREATE DROP TABLE Permission(
 	permission_id int primary key identity(1,1),
 	name nvarchar(50) not null,
 	[order] int default 1,
