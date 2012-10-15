@@ -67,26 +67,26 @@ public class BaohanhController:Interface
 
     public void Delete(int id)
     {
-        try
-        {
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = con;
-            cmd.CommandText = "Insert_Menu";
-            cmd.CommandType = CommandType.StoredProcedure;
-            Menu menu = (Menu)obj;
-            cmd.Parameters.Add("@name", SqlDbType.NVarChar, 50).Value = menu.Name;
-            cmd.Parameters.Add("@url", SqlDbType.NText).Value = menu.Url;
-            cmd.Parameters.Add("@typeUrl", SqlDbType.Bit).Value = menu.TypeUrl;
-            cmd.Parameters.Add("@order", SqlDbType.Int).Value = menu.Order;
-            cmd.Parameters.Add("@status", SqlDbType.Bit).Value = menu.Status;
-            cmd.Parameters.Add("@dateStart", SqlDbType.DateTime).Value = menu.DateStart;
-            cmd.ExecuteNonQuery();
-        }
-        catch (Exception)
-        {
+        //try
+        //{
+        //    SqlCommand cmd = new SqlCommand();
+        //    cmd.Connection = con;
+        //    cmd.CommandText = "Insert_Menu";
+        //    cmd.CommandType = CommandType.StoredProcedure;
+        //    Menu menu = (Menu)obj;
+        //    cmd.Parameters.Add("@name", SqlDbType.NVarChar, 50).Value = menu.Name;
+        //    cmd.Parameters.Add("@url", SqlDbType.NText).Value = menu.Url;
+        //    cmd.Parameters.Add("@typeUrl", SqlDbType.Bit).Value = menu.TypeUrl;
+        //    cmd.Parameters.Add("@order", SqlDbType.Int).Value = menu.Order;
+        //    cmd.Parameters.Add("@status", SqlDbType.Bit).Value = menu.Status;
+        //    cmd.Parameters.Add("@dateStart", SqlDbType.DateTime).Value = menu.DateStart;
+        //    cmd.ExecuteNonQuery();
+        //}
+        //catch (Exception)
+        //{
 
-            throw;
-        }
+        //    throw;
+        //}
     }
 
     public System.Data.DataTable GetAll()
