@@ -14,6 +14,8 @@ CREATE TABLE Menu(
 )
 INSERT INTO Menu (name,url,typeUrl,[order],[status],dateStart) VALUES(N'Trang chu',N'',1,1,1,'08-21-2012')
 
+
+
 --Bang Category
 CREATE TABLE Category(
 	category_id int primary key identity(1,1),
