@@ -10,10 +10,9 @@ using System.IO;
 
 public partial class Admin_Config : System.Web.UI.Page
 {
-    private static Uri u;
+    
     protected void Page_Load(object sender, EventArgs e)
     {
-        
         if(!IsPostBack)
         {
             ConfigController configController = new ConfigController();
@@ -24,7 +23,7 @@ public partial class Admin_Config : System.Web.UI.Page
                 id.Value = c.Config_id+"";
                 txtCompany.Text = c.Company;
                 txtTitle.Text = c.Title;
-                editor.Text = c.Description;
+                editors.Text = c.Description;
                 txtAddress.Text = c.Address;
                 txtPhone.Text = c.Phone;
                 txtEmail.Text = c.Email;
@@ -37,7 +36,7 @@ public partial class Admin_Config : System.Web.UI.Page
                 id.Value = 1 + "";
                 txtCompany.Text = "";
                 txtTitle.Text = "";
-                editor.Text = "";
+                editors.Text = "";
                 txtAddress.Text = "";
                 txtPhone.Text = "";
                 txtEmail.Text = "";
@@ -47,8 +46,9 @@ public partial class Admin_Config : System.Web.UI.Page
         }
     }
     [WebMethod]
-    public static string getResult(int id,string company,string title,string description,string address,string phone,string email,string website,string logo,string favicon)
+    public static string getResult(int id,string logo,string favicon)
     {
+        
         ConfigController configController = new ConfigController();
         Config c = new Config();
         c.Config_id = id;
@@ -61,10 +61,17 @@ public partial class Admin_Config : System.Web.UI.Page
         c.Website = "";
         c.Logo = "";
         c.Favicon = "";
-        string root = Request.Url.AbsoluteUri.Replace(Request.Url.AbsolutePath, "") + ResolveUrl("~");
-        if (configController.Update(c)>0)
+        string root = HttpContext.Current.Server.MapPath("~/");
+
+        if (configController.Update(c) > 0)
         {
-            deletefile();
+            deletefile(root + logo);
+            deletefile(root + favicon);
+            return root + favicon;
+        }
+        else
+        {
+            return "Reset không thành công";
         }
         
     }
@@ -86,5 +93,29 @@ public partial class Admin_Config : System.Web.UI.Page
         }
 
     }
-    
+
+    protected void btnSave_Click(object sender, EventArgs e)
+    {
+        ConfigController configController = new ConfigController();
+        Config c = new Config();
+        c.Config_id = Convert.ToInt32(id.Value);
+        c.Company = txtCompany.Text;
+        c.Title = txtTitle.Text;
+        c.Description = editors.Text;
+        c.Address = txtAddress.Text;
+        c.Phone = txtPhone.Text;
+        c.Email = txtEmail.Text;
+        c.Website = txtWebsite.Text;
+        c.Logo = logo_value.Value;
+        c.Favicon = favicon_value.Value;
+        if(configController.Update(c)>0)
+        {
+            Response.Write("<script>alert('Lưu thông tin thành công')</script>");
+        }
+        else
+        {
+            Response.Write("<script>alert('Lưu thông gặp lỗi')</script>");
+            return;
+        }
+    }
 }

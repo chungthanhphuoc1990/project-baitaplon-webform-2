@@ -119,7 +119,7 @@
                 <label>
                     Description</label>
                 <div>
-                    <asp:TextBox runat="server" CssClass="editor" ID="editor" TextMode="MultiLine"></asp:TextBox><span
+                    <asp:TextBox runat="server" CssClass="editors" ID="editors" TextMode="MultiLine"></asp:TextBox><span
                         class="f_help">Description of website (SEO)</span></div>
             </div>
             <div class="section">
@@ -183,11 +183,11 @@
                                     status.text('');
                                     //Add uploaded file to list
                                     if (response === "success") {
-                                        var src = '<% Response.Write(Request.Url.AbsoluteUri.Replace(Request.Url.AbsolutePath, "") + ResolveUrl("~")); %>Admin/images/logo/' + file;
-                                        url_logo = '<% Response.Write(Request.Url.AbsoluteUri.Replace(Request.Url.AbsolutePath, "") + ResolveUrl("~")); %>Admin/images/logo/' + file;
+                                        var src = '<% Response.Write(Request.Url.AbsoluteUri.Replace(Request.Url.AbsolutePath, "") + ResolveUrl("~")); %>Images/logo/' + file;
+                                        url_logo = '<% Response.Write(Request.Url.AbsoluteUri.Replace(Request.Url.AbsolutePath, "") + ResolveUrl("~")); %>Images/logo/' + file;
                                         var image = "<img src='" + src + "'/>";
                                         var name = "<br/>" + file;
-                                        $("#Maincontent_logo_value").val("Admin/images/logo/"+file);
+                                        $("#Maincontent_logo_value").val("Images/logo/"+file);
                                         $('#files_logo').html('Thêm logo thành công').addClass('success');
                                     } else {
                                         $('#status_logo').html('Thêm logo gặp lỗi').addClass('error');
@@ -216,7 +216,7 @@
                         $(function () {
                             var btnUpload = $('#Maincontent_fileupload_favicon');
                             var status = $('#status_favicon');
-                            var folder = "<% Server.MapPath("~/Admin/images/logo/"); %>";
+                            var folder = "<% Server.MapPath("~/Images/logo/"); %>";
                             new AjaxUpload(btnUpload, {
                                 action: '<% Response.Write(Request.Url.AbsoluteUri.Replace(Request.Url.AbsolutePath, "") + ResolveUrl("~")); %>Admin/UploadImage.aspx',
                                 name: 'uploadfile',
@@ -233,11 +233,11 @@
                                     status.text('');
                                     //Add uploaded file to list
                                     if (response === "success") {
-                                        var src = '<% Response.Write(Request.Url.AbsoluteUri.Replace(Request.Url.AbsolutePath, "") + ResolveUrl("~")); %>Admin/images/logo/' + file;
-                                        url_logo = '<% Response.Write(Request.Url.AbsoluteUri.Replace(Request.Url.AbsolutePath, "") + ResolveUrl("~")); %>Admin/images/logo/' + file;
+                                        var src = '<% Response.Write(Request.Url.AbsoluteUri.Replace(Request.Url.AbsolutePath, "") + ResolveUrl("~")); %>Images/logo/' + file;
+                                        url_logo = '<% Response.Write(Request.Url.AbsoluteUri.Replace(Request.Url.AbsolutePath, "") + ResolveUrl("~")); %>Images/logo/' + file;
                                         var image = "<img src='" + src + "'/>";
                                         var name = "<br/>" + file;
-                                        $("#Maincontent_favicon_value").val("Admin/images/logo/"+file);
+                                        $("#Maincontent_favicon_value").val("Images/logo/"+file);
                                         $('#files_favicon').html('Thêm favicon thành công').addClass('success');
                                     } else {
                                         $('#status_favicon').html('Thêm favicon gặp lỗi').addClass('error');
@@ -252,7 +252,8 @@
             <div class="section last">
                 <div>
                     <asp:HiddenField runat="server" ID="id" />
-                    <a class="uibutton loading" title="Saving" rel="1">Save</a>
+                    <asp:Button runat="server" Text="Save" ID="btnSave" CssClass="uibutton" 
+                        onclick="btnSave_Click"></asp:Button>
                     <a class="uibutton" id="reset_config" title="Reset">Reset</a>
                 </div>
                 
