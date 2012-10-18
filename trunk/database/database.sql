@@ -500,3 +500,31 @@ VALUES(1,1)
 
 ALTER TABLE Product ADD CONSTRAINT fk_address_baohanh_product foreign key (address_baohanh_id) references Address_Baohanh(address_baohanh_id)
 
+--Bang Slider
+CREATE TABLE Slider(
+	slider_id int primary key identity(1,1),
+	title ntext not null,
+	[image] ntext not null,
+	url ntext null,
+	[order] int default 1,
+	[status] bit default 1,
+	dateStart datetime,
+	dateUpdate datetime
+)
+INSERT INTO Slider(title,[image],url,[order],[status],dateStart)
+VALUES(N'San pham 1',N'Duong dan anh',1,1,'2012-10-12');
+
+--Bang Config
+CREATE TABLE Config(
+	config_id int primary key identity(1,1),
+	company ntext not null,
+	title ntext null,
+	[description] ntext null,
+	[address] ntext null,
+	phone ntext null,
+	email ntext null,
+	website ntext null,
+	logo ntext null,
+	favicon ntext null,
+
+)

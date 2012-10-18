@@ -97,7 +97,14 @@ $(document).ready(function(){
 		});
 	
 	
-	//dataTable
+	
+    //data_table_vitri
+    $('.data_table_vitri').dataTable({
+		"sDom": 'f<"clear">rt<"clear">',
+		"aaSorting": [],
+		"aoColumns": [ { "bSortable": true },null,{ "bSortable": false } ]
+	});
+    //dataTable
 	$('.data_table').dataTable({
 		"sDom": 'f<"clear">rt<"clear">',
 		"aaSorting": [],
@@ -115,7 +122,7 @@ $(document).ready(function(){
 	"sPaginationType": "full_numbers",
 	 "aaSorting": [],
 	  "aoColumns": [
-					{ "bSortable": false },null,null,null,null
+					{ "bSortable": true },null,null,null,{ "bSortable": false }
 	  ]
 	});
 	$('.data_table3').dataTable({
@@ -127,7 +134,7 @@ $(document).ready(function(){
 	});
 	
 	// input editor
-	$("#editor,#editor2").cleditor();	
+	$("#editor,#editor2,.editor").cleditor();	
 	
 	// form validationEngine
 	$('form#validation').validationEngine();		
@@ -605,7 +612,7 @@ $(function() {
 
 	// checkbox,selectbox customInput 
 	 $('input[placeholder], textarea[placeholder]').placeholder();
-	$('.ck,.chkbox,.checkAll ,input:radio').customInput();	
+	$('.chkbox,.checkAll').customInput();	
 	$('.limit3m').limitInput({max:3,disablelabels:true});
 	// select boxes
 	$(function() {

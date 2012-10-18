@@ -26,7 +26,7 @@
         <asp:GridView ID="grvMenu" runat="server" EmptyDataText="Du lieu trong" 
             AutoGenerateColumns="False">
             <Columns>
-                <asp:BoundField runat="server" HeaderText="ID" DataField="menu_id"/>
+                <asp:BoundField runat="server" HeaderText="ID</div>" DataField="menu_id"/>
                 <asp:BoundField runat="server" HeaderText="Name" DataField="name"/>
                 <asp:BoundField runat="server" HeaderText="Url" DataField="url"/>
                 <asp:BoundField runat="server" HeaderText="Type Url" DataField="typeUrl"/>
@@ -34,7 +34,10 @@
                 <asp:BoundField runat="server" HeaderText="Status" DataField="status"/>
                 <asp:BoundField runat="server" HeaderText="Date Start" DataField="dateStart"/>
                 <asp:TemplateField runat="server">
-                    <HeaderTemplate>Action</HeaderTemplate>
+                    <HeaderTemplate></HeaderTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField runat="server">
+                    <HeaderTemplate><div class='test'>Action</div></HeaderTemplate>
                     <ItemTemplate><a href="">Add</a><a href="">Update</a><a href="">Delete</a></ItemTemplate>
                 </asp:TemplateField>
             </Columns>
