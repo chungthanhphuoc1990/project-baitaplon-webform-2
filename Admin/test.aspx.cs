@@ -8,6 +8,7 @@ using System.Data;
 
 public partial class Admin_test : System.Web.UI.Page
 {
+    
     testController t = new testController();
     protected void Page_Load(object sender, EventArgs e)
     {

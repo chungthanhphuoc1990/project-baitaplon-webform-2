@@ -32,21 +32,64 @@
                   <div id="left_menu">
                     <ul id="main_menu" class="main_menu">
                       <li class="limenu select" ><a href="dashboard.html"><span class="ico gray shadow home" ></span><b>Dashboard</b></a></li>
-                      <li class="limenu" ><a href="#" ><span class="ico gray shadow window"></span><b>Form elements</b></a>
+                      <li class="limenu" ><a href="#" ><span class="ico gray shadow window"></span><b>Sản phẩm</b></a>
                         <ul>
-                          <li ><a href="form.html"> basic form </a></li>
-                          <li ><a href="vform.html"> validation </a></li>
-                          <li ><a href="wizard.html"> wizard </a></li>
+                          <li ><a href="form.html"> Thêm sản phẩm </a></li>
+                          <li ><a href="vform.html"> DS sản phẩm </a></li>
+                          <li ><a href="wizard.html"> Loại sản phẩm </a></li>
+                          <li ><a href="wizard.html"> HD sử dụng </a></li>
                         </ul>
                       </li>
-                      <li class="limenu" ><a href="#"><span class="ico gray  dimensions" ></span><b>Sample pages</b></a>
+                      <li class="limenu" ><a href="#" ><span class="ico gray shadow window"></span><b>Phụ kiện</b></a>
                         <ul>
-                          <li ><a href="profile.html"> Profile setting </a></li>
-                          <li ><a href="conversation.html"> conversation</a></li>
-                          <li ><a href="imagesEditor.html"> Images Editor </a></li>
+                          <li ><a href="form.html"> Thêm phụ kiện </a></li>
+                          <li ><a href="vform.html"> DS phụ kiện </a></li>
+                          <li ><a href="wizard.html"> Loại phụ kiện </a></li>
                         </ul>
                       </li>
-                      <li class="limenu" ><a href="table.html"><span class="ico gray shadow  spreadsheet"></span><b>Tables</b> </a></li>
+                      <li class="limenu" ><a href="Menu.aspx"><span class="ico gray  dimensions" ></span><b>Menu</b></a>
+                        <ul>
+                          <li ><a href="AddMenu.aspx"> Thêm Menu </a></li>
+                          <li ><a href="Menu.aspx"> DS menu</a></li>
+                        </ul>
+                      </li>
+                      <li class="limenu" ><a href="table.html"><span class="ico gray shadow  spreadsheet"></span><b>Tin tức</b> </a>
+                        <ul>
+                          <li ><a href="form.html"> Thêm tin tức </a></li>
+                          <li ><a href="vform.html"> DS tin tức </a></li>
+                          <li ><a href="wizard.html"> Loại tin tức </a></li>
+                        </ul>
+                      </li>
+                      <li class="limenu" ><a href="table.html"><span class="ico gray shadow  spreadsheet"></span><b>Slider</b> </a>
+                        <ul>
+                          <li ><a href="form.html"> Thêm slider </a></li>
+                          <li ><a href="vform.html"> DS slider </a></li>
+                        </ul>
+                      </li>
+                      <li class="limenu" ><a href="table.html"><span class="ico gray shadow  spreadsheet"></span><b>Cấu hình</b> </a>
+                        <ul>
+                          <li ><a href="vform.html"> Hệ thống </a></li>
+                          <li ><a href="wizard.html"> Người dùng </a></li>
+                          <li ><a href="wizard.html"> Phân quyền </a></li>
+                          <li ><a href="form.html"> Địa chỉ đại lý </a></li>
+                          <li ><a href="wizard.html"> Màu sắc </a></li>
+                        </ul>
+                      </li>
+                      <li class="limenu" ><a href="table.html"><span class="ico gray shadow  spreadsheet"></span><b>Comments</b> </a>
+                      </li>
+                      <li class="limenu" ><a href="table.html"><span class="ico gray shadow  spreadsheet"></span><b>Liên hệ</b> </a>
+                      </li>
+                      <li class="limenu" ><a href="table.html"><span class="ico gray shadow  spreadsheet"></span><b>FAQ</b> </a>
+                      </li>
+                      <li class="limenu" ><a href="table.html"><span class="ico gray shadow  spreadsheet"></span><b>Giới thiệu</b> </a>
+                      </li>
+                      <li class="limenu" ><a href="table.html"><span class="ico gray shadow  spreadsheet"></span><b>Quảng cáo</b> </a>
+                        <ul>
+                          <li ><a href="form.html"> Thêm quảng cáo </a></li>
+                          <li ><a href="vform.html"> DS quảng cáo </a></li>
+                          <li ><a href="wizard.html"> Vị trí QC </a></li>
+                        </ul>
+                      </li>
                       <li class="limenu" ><a href="gallery.html"><span class="ico gray shadow pictures_folder"></span><b>Gallery </b></a></li>
                       <li class="limenu" ><a href="#"><span class="ico gray shadow stats_lines"></span><b>Graph and Charts</b> </a>
                         <ul>

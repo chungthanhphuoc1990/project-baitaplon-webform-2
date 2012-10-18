@@ -1,13 +1,20 @@
 ﻿<%@ Application Language="C#" %>
-
+<%@ Import namespace="System.Web.Routing" %>
 <script runat="server">
 
-    void Application_Start(object sender, EventArgs e) 
+    void Application_Start(object sender, EventArgs e)
     {
-        // Code that runs on application startup
-
+        //Goi phuong thuc add Route
+        //RegisterRoutes(RouteTable.Routes);
+        //RouteController o trong App_Code/Controller
+        RouteController.AddRoute("addmenu", "Admin/sd{addmenu}", "~/Admin/AddMenu.aspx");
+        RouteController.AddRoute("menu", "Admin/{menu}.html", "~/Admin/Menu.aspx");
     }
-    
+    //Phuong thuc add Route 
+    //public static void RegisterRoutes(RouteCollection routeCollection)
+    //{
+        //routeCollection.MapPageRoute("menu", "Admin/{menu}", "~/Admin/Menu.aspx");
+    //}
     void Application_End(object sender, EventArgs e) 
     {
         //  Code that runs on application shutdown
