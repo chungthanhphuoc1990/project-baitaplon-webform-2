@@ -89,24 +89,18 @@
         var choose = confirm("Bạn có muốn xóa các thông số của hệ thống không?");
         if (choose) {
             var id = jQuery("#Maincontent_id").val();
-            var company = jQuery("#Maincontent_txtCompany").val();
-            var title = jQuery("#Maincontent_txtTitle").val();
-            var description = jQuery("#Maincontent_editor").val();
-            var address = jQuery("#Maincontent_txtAddress").val();
-            var phone = jQuery("#Maincontent_txtPhone").val();
-            var email = jQuery("#Maincontent_txtEmail").val();
-            var website = jQuery("#Maincontent_txtWebsite").val();
             var logo = jQuery("#Maincontent_logo_value").val();
             var favicon = jQuery("#Maincontent_favicon_value").val();
             $.ajax({
                 type: "POST",
                 contentType: "application/json; charset=utf-8",
                 url: "Config.aspx/getResult",
-                data: JSON.stringify({ id: id, company: company,title:title,description:description,address:address,phone:phone,email:email,website:website,logo:logo,favicon:favicon }),
+                data: JSON.stringify({ id: id, logo: logo, favicon: favicon }),
                 dataType: "json",
                 success: function (msg) {
                     // Replace the div's content with the page method's return.
                     alert(msg.d);
+                    location = "Config.aspx";
                 }
             });
         }
